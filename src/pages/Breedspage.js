@@ -1,28 +1,24 @@
 import React, {useState, useEffect} from 'react';
 
 import {Text, View, FlatList, StyleSheet} from 'react-native';
+import {breedsApi} from '../api';
 
 const Breedspage = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [alreadySavedPages, setAlreadySavedPages] = useState([]);
 
-  const apiCall = async () => {
-    fetch(`https://catfact.ninja/breeds?page=${page}`)
-      .then(response => response.text())
-      .then(res => {
-        const wholeData = JSON.parse(res);
-        setAlreadySavedPages([...alreadySavedPages, page]); // avoid data duplication when saving code
-        if (!alreadySavedPages.includes(page)) {
-          setData([...data, ...wholeData.data]);
-        }
-      })
-      .catch(error => console.log('error', error));
-  };
-
   useEffect(() => {
-    apiCall();
+    getBreeds();
   }, [page]);
+  const getBreeds = () => {
+    breedsApi(page).then(resp => {
+      setAlreadySavedPages([...alreadySavedPages, page]); // avoid data duplication when saving code
+      if (!alreadySavedPages.includes(page)) {
+        setData([...data, ...resp]);
+      }
+    });
+  };
 
   return (
     <View style={styles.headerContainer}>
