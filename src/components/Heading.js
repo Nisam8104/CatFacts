@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const Headingtext = () => {
+const Headingtext = (props) => {
+  
   return (
-    <Text style={styles.headingtext}>Do you know about cats?</Text>
+    <Text style={styles.headingtext}>{props.title}</Text>
   )
 };
 

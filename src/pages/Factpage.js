@@ -9,7 +9,7 @@ const Factpage = () => {
 
   return (
     <View style={styles.container}>
-      <Headingtext />
+      <Headingtext title="Do you know about cats?" />
       <FactCard/>
       <CatImage />
     </View>
