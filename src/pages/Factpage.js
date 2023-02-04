@@ -4,7 +4,7 @@ import CatImage from '../components/CatImage';
 import Headingtext from '../components/Heading';
 import FactCard from '../components/FactCard';
 
-const Homepage = () => {
+const Factpage = () => {
   
 
   return (
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Homepage;
+export default Factpage;
