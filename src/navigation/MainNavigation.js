@@ -7,7 +7,7 @@ import BreedStack from './BreedStack';
 const Tab = createBottomTabNavigator();
 const TabScreen = () => (
     <Tab.Navigator>
-      <Tab.Screen name="Breedstack" component={BreedStack} />
+      <Tab.Screen  options={{headerShown: false}} name="Breedstack" component={BreedStack} />
       <Tab.Screen name="Facts" component={Factpage} />
     </Tab.Navigator>
   );
