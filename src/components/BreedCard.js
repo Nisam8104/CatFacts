@@ -1,13 +1,17 @@
 import React ,{useState,useEffect} from 'react';
 import { Text, View, FlatList} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import {breedsApi} from '../api';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const BreedCard = (props) => {
+  const navigation = useNavigation();
     const {index, item} = props
     // const index = props.index
     // const item = props.item
 
   return (
+    <TouchableOpacity onPress={()=>navigation.navigate('Breed',{...props})}>
     <View style={styles.cards}>
               <View style={styles.center}>
                 <Text style={styles.textBold}> {index + 1}</Text>
@@ -22,6 +26,7 @@ const BreedCard = (props) => {
                 <Text style={styles.text}>Pattern: {item.pattern}</Text>
               </View>
             </View>
+            </TouchableOpacity>
   )
 };
 

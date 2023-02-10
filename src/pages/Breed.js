@@ -1,7 +1,12 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
+import {Button} from 'react-native';
+import Breedspage from './Breedspage';
+import { useNavigation } from '@react-navigation/native';
 
-const App = () => {
+// const navigation = useNavigation();
+const App = (props) => {
+  console.log('abc',props.route.params)
   return (
     <View style={styles.parentView}>
       <View style={styles.cards}>
@@ -17,6 +22,7 @@ const App = () => {
           <Text style={styles.text}>Coat: Short</Text>
           <Text style={styles.text}>Pattern: Ticked</Text>
         </View>
+        
       </View>
     </View>
   );
