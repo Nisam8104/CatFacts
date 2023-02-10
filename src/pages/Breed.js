@@ -2,17 +2,17 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {Button} from 'react-native';
 import Breedspage from './Breedspage';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 // const navigation = useNavigation();
-const App = (props) => {
-  const {index, item} = props.route.params
-  console.log('abc',index,item)
+const App = props => {
+  const {index, item} = props.route.params;
+  
   return (
     <View style={styles.parentView}>
       <View style={styles.cards}>
         <View style={styles.center}>
-          <Text style={styles.textBold}>Card No:{index+1}</Text>
+          <Text style={styles.textBold}>Card No:{index + 1}</Text>
           <Text style={styles.textBold}>Breed: {item.breed}</Text>
         </View>
         <View style={styles.row}>
@@ -23,7 +23,6 @@ const App = (props) => {
           <Text style={styles.text}>Coat: {item.coat}</Text>
           <Text style={styles.text}>Pattern: {item.pattern}</Text>
         </View>
-        
       </View>
     </View>
   );
