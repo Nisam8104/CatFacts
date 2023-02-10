@@ -17,14 +17,7 @@ const BreedCard = (props) => {
                 <Text style={styles.textBold}> {index + 1}</Text>
                 <Text style={styles.textBold}>Breed: {item.breed}</Text>
               </View>
-              <View style={styles.row}>
-                <Text style={styles.text}>Country: {item.country}</Text>
-                <Text style={styles.text}>Origin: {item.origin}</Text>
-              </View>
-              <View style={styles.row}>
-                <Text style={styles.text}>Coat: {item.coat}</Text>
-                <Text style={styles.text}>Pattern: {item.pattern}</Text>
-              </View>
+              
             </View>
             </TouchableOpacity>
   )

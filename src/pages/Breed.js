@@ -6,21 +6,22 @@ import { useNavigation } from '@react-navigation/native';
 
 // const navigation = useNavigation();
 const App = (props) => {
-  console.log('abc',props.route.params)
+  const {index, item} = props.route.params
+  console.log('abc',index,item)
   return (
     <View style={styles.parentView}>
       <View style={styles.cards}>
         <View style={styles.center}>
-          <Text style={styles.textBold}>Card No:1</Text>
-          <Text style={styles.textBold}>Breed: Abyssinian</Text>
+          <Text style={styles.textBold}>Card No:{index+1}</Text>
+          <Text style={styles.textBold}>Breed: {item.breed}</Text>
         </View>
         <View style={styles.row}>
-          <Text style={styles.text}>Country: Ethiopia</Text>
-          <Text style={styles.text}>Origin: Natural\/Standard</Text>
+          <Text style={styles.text}>Country: {item.country}</Text>
+          <Text style={styles.text}>Origin: {item.origin}</Text>
         </View>
         <View style={styles.row}>
-          <Text style={styles.text}>Coat: Short</Text>
-          <Text style={styles.text}>Pattern: Ticked</Text>
+          <Text style={styles.text}>Coat: {item.coat}</Text>
+          <Text style={styles.text}>Pattern: {item.pattern}</Text>
         </View>
         
       </View>
